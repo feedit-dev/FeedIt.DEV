@@ -1,50 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:art19="https://art19.com/xmlns/rss-extensions/1.0">
-  <channel>
 
-    <title>Test Podcast</title>
+  <% if @feed.existing_feed %>
+    <%= render 'existing_feed' %>
+  <% else %>
+    <%= render 'test_feed' %>
+  <% end %>
 
-    <description>
-      <![CDATA[<p>This is a description for your test podcast.</p>]]>
-    </description>
-
-    <managingEditor>test@test.com</managingEditor>
-    <copyright>Test LLC</copyright>
-    <generator>Test</generator>
-
-    <atom:link href="https://rss.art19.com/throwing-shade" rel="self" type="application/rss+xml"/>
-    <link>http://google.com</link>
-    <itunes:new-feed-url>https://rss.art19.com/throwing-shade</itunes:new-feed-url>
-
-    <itunes:owner>
-      <itunes:name>Earwolf</itunes:name>
-      <itunes:email>rss+throwingshade@earwolf.com</itunes:email>
-    </itunes:owner>
-
-    <itunes:author>Erin Gibson &amp; Bryan Safi, Earwolf</itunes:author>
-
-    <itunes:summary>
-      <![CDATA[<p>Throwing Shade is the political comedy podcast hosted by Erin Gibson and Bryan Safi who deliver their fresh takes on pop culture, women’s rights, and LGBT rights with hilarity and vulgarity. Spend your Thursdays with the podcast called "the perfect combination of silly, intelligent, cynical and charming" by Entertainment Weekly and "Oprah's #1 pick" by an iTunes reviewer who is not Oprah.</p>]]>
-    </itunes:summary>
-    <language>en</language>
-
-    <itunes:explicit>yes</itunes:explicit>
-    <itunes:category text="Comedy"/>
-    <itunes:category text="Health"/>
-    <itunes:category text="News &amp; Politics"/>
-    <itunes:keywords>womens,TV,society,sexuality,rights,pop,Politics,News,lgbt,gender,gay,film,feminist,feminism,female,Education,culture,Comedy,alternative,alt</itunes:keywords>
-    <itunes:type>episodic</itunes:type>
-    <itunes:image href="https://content.production.cdn.art19.com/images/1d/47/38/a0/1d4738a0-9d4a-49f1-878b-948786f3dd21/f104d70c13e074b9922a522d9be96a0ab6ad194a8ad49fe466aaa2699e4c72d87e41109a4d4978fe02c2d8b8750a8358a667c09a8b1915c28bbddbf18a639cbf.jpeg"/>
-
-    <image>
-      <url>https://content.production.cdn.art19.com/images/1d/47/38/a0/1d4738a0-9d4a-49f1-878b-948786f3dd21/f104d70c13e074b9922a522d9be96a0ab6ad194a8ad49fe466aaa2699e4c72d87e41109a4d4978fe02c2d8b8750a8358a667c09a8b1915c28bbddbf18a639cbf.jpeg</url>
-      <link>http://www.earwolf.com/show/throwing-shade/</link>
-      <title>Throwing Shade</title>
-    </image>
-
-    <% (1..@feed.episodes).each do |i| %>
-      <%= render 'episode' %>
-    <% end %>
-
-  </channel>
 </rss>

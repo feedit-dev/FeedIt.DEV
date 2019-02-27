@@ -4,6 +4,17 @@ class FeedsController < ApplicationController
   def index
     @feed = Feed.new
 
+    if params[:existing_feed]
+      @feed.existing_feed = true
+
+      # If they want an existing podcast feed
+      # Let's kill all other params, since an existing feed
+      # takes precedence in attribute implementation.
+      for param in params
+        params.delete(param)
+      end
+    end
+
     # Episodes requires #.to_i conversion
     # So we can't dynamically call on Feed obj.
     if params[:eps]

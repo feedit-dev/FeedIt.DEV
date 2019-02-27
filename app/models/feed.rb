@@ -1,5 +1,5 @@
 class Feed
-  attr_accessor :episodes, :audio_url, :guid, :enhancements
+  attr_accessor :existing_feed, :episodes, :audio_url, :guid, :enhancements
 
   MALFORMED_AUDIO_URL_PATH = "http://s3.aws.com/malformed_audio_url.mp3"
 
