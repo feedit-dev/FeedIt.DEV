@@ -2,7 +2,6 @@ class FeedsController < ApplicationController
   respond_to :xml
 
   def index
-    # Boot up feed object
     @feed = Feed.new
 
     # Episodes requires #.to_i conversion
@@ -10,6 +9,8 @@ class FeedsController < ApplicationController
     if params[:eps]
       @feed.with_episodes(count: params[:eps].to_i)
     end
+
+    # Kill the eps in params to not break dynamic calling
     params.delete(:eps)
 
     # Build up feed state dynamically
@@ -17,6 +18,6 @@ class FeedsController < ApplicationController
       @feed.send(feed_option[0]) if @feed.respond_to? feed_option[0]
     end
 
-    respond_with @test
+    respond_with @feed
   end
 end

@@ -1,5 +1,5 @@
 class Feed
-  attr_accessor :episodes, :audio_url, :guid
+  attr_accessor :episodes, :audio_url, :guid, :enhancements
 
   MALFORMED_AUDIO_URL_PATH = "http://s3.aws.com/malformed_audio_url.mp3"
 
@@ -22,10 +22,17 @@ class Feed
     self
   end
 
-  def with_duplicate_guids
+  def duplicate_guids
     self.guid = :duplicate
     self
   end
 
+  def enhanced_episode_tags
+    self.enhancements = :enhanced_episode_tags
+    self
+  end
 
+  private
+  def method_missing method_name, *args, &block
+  end
 end
