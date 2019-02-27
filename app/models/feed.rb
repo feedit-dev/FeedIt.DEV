@@ -32,7 +32,29 @@ class Feed
     self
   end
 
+  # Kill params after use, if not dynamically assigned
+  # TODO(@dain): Better method name
+  def build_state params
+
+    if params[:existing_feed]
+      self.existing_feed = true
+      for param in params
+        params.delete(param)
+      end
+    end
+
+    if params[:eps]
+      self.with_episodes(count: params[:eps].to_i)
+      params.delete(:eps)
+    end
+
+    for feed_option in params
+      self.send(feed_option[0]) if self.respond_to? feed_option[0]
+    end
+  end
+
   private
   def method_missing method_name, *args, &block
+    puts "Method missing called"
   end
 end
