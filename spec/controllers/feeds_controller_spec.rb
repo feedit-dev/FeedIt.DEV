@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe FeedsController, type: :controller do
+RSpec.describe "FeedsController", type: :controller do
 
   describe "GET /feeds" do
 
