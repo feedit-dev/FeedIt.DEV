@@ -10,11 +10,12 @@ cache:
   paths:
   - vendor/
 
-test:
+production:
   script:
   - apt-get update -qy
   - apt-get install -y nodejs
-  - bundler update --bundler
+  - gem uninstall bundler
+  - gem install bundler -v 1.15.2
   - bundle install --path vendor
   - bundle exec rake db:create RAILS_ENV=test
   - bundle exec rake test
