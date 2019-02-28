@@ -23,7 +23,6 @@ before_script:
 #   - apt-get update -yq
 #   - apt-get install -y yarn
   - apt-get dist-upgrade
-  - gitlab-ctl reconfigure
   - bundle check || bundle install --jobs $(nproc)
   - yarn install
   - bundle exec rails db:create RAILS_ENV=test
