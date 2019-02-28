@@ -17,6 +17,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'sqlite3', '~> 1.3.6'
+  gem 'rails-controller-testing'
 end
 
 group :production do
