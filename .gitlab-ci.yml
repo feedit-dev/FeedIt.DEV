@@ -27,7 +27,7 @@ before_script:
   - yarn install
 #   - bundle exec rails db:create RAILS_ENV=test
 #   - bundle exec rails db:schema:load RAILS_ENV=test
-  - bundle exec webpack
+#   - bundle exec webpack
   
 stages:
   - test
