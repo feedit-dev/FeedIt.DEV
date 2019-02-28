@@ -1,4 +1,4 @@
-mage: ruby:2.1
+image: ruby:2.1
 
 services:
   - postgres
@@ -8,13 +8,12 @@ variables:
 
 cache:
   paths:
-    - vendor/
+  - vendor/
 
 test:
   script:
-    - apt-get update -qy
-    - apt-get install -y nodejs
-    - bundle install --path vendor
-    - bundle exec rake db:create RAILS_ENV=test
-    - bundle exec rspec
-
+  - apt-get update -qy
+  - apt-get install -y nodejs
+  - bundle install --path vendor
+  - bundle exec rake db:create RAILS_ENV=test
+  - bundle exec rake test
