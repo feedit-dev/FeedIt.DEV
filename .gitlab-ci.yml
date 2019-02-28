@@ -11,8 +11,8 @@ variables:
 
 cache:
   paths:
-  - vendor/
-  - node_modules
+    - vendor/
+    - node_modules
 
 before_script:
   - curl -sL https://deb.nodesource.com/setup_8.x | bash -
@@ -34,6 +34,6 @@ stages:
   - deploy
  
 Tests:
-  staage: test
+  stage: test
   script:
     - bundle exec rspec
