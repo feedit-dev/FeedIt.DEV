@@ -1,11 +1,6 @@
 class Feed
   attr_accessor :existing_feed, :episodes, :duplicate_guid, :empty_guid, :malformed_audio
 
-  def with_episodes(count:)
-    self.episodes = count
-  end
-
-  private
   def build_state_from_url params
 
     if params[:existing_feed]
