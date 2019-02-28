@@ -15,16 +15,16 @@ cache:
     - node_modules
 
 before_script:
-#   - curl -sL https://deb.nodesource.com/setup_8.x | bash -
-#   - apt-get update -yq
-#   - apt-get install -y apt-transport-https build-essential cmake nodejs software-properties-common unzip
-#   - wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-#   - echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
-#   - apt-get update -yq
-#   - apt-get install -y yarn
-  - apt-get dist-upgrade
+  - curl -sL https://deb.nodesource.com/setup_8.x | bash -
+  - apt-get update -yq
+  - apt-get install -y apt-transport-https build-essential cmake nodejs software-properties-common unzip
+  - wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
+  - apt-get update -yq
+  - apt-get install -y yarn
+#   - apt-get dist-upgrade
   - bundle check || bundle install --jobs $(nproc)
-#   - yarn install
+  - yarn install
 #   - bundle exec rails db:create RAILS_ENV=test
 #   - bundle exec rails db:schema:load RAILS_ENV=test
 #   - bundle exec webpack
