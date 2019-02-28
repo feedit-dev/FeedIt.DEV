@@ -1,4 +1,4 @@
-if Rails
+if defined? Rails
   if Rails.env.test? || Rails.env.development?
     require 'rspec/rails'
   end
