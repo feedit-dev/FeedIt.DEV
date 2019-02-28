@@ -14,7 +14,7 @@ production:
   script:
   - apt-get update -qy
   - apt-get install -y nodejs
-  - gem install bundler -v 1.15.2
+  - gem update --system
   - bundle install --path vendor
   - bundle exec rake db:create RAILS_ENV=test
   - bundle exec rake test
