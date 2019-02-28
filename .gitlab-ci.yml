@@ -22,7 +22,7 @@ before_script:
   - echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
   - apt-get update -yq
   - apt-get install -y yarn
-  - apt-get dist-upgrade
+#   - apt-get dist-upgrade
   - bundle check || bundle install --jobs $(nproc)
   - yarn install
 #   - bundle exec rails db:create RAILS_ENV=test
