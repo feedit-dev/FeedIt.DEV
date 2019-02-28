@@ -22,7 +22,7 @@ Thank you, [contributors]!
 
 ## License
 
-$(PROJECT_NAME) is Copyright (c) 2017 thoughtbot, inc.
+PodFeed.IT is Copyright (c) 2019 carlton dain miller.
 It is free software, and may be redistributed
 under the terms specified in the [LICENSE] file.
 
@@ -30,19 +30,16 @@ under the terms specified in the [LICENSE] file.
 
 ## About
 
-$(PROJECT_NAME) is maintained by $(MAINTAINERS).
+PodFeed.IT is maintained by [Dain Miller](http://dain.io).
 
-![thoughtbot](http://presskit.thoughtbot.com/images/thoughtbot-logo-for-readmes.svg)
-
-$(PROJECT_NAME) is maintained and funded by thoughtbot, inc.
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+![starthere](https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2019-02-27/563189498370_28783431d83611e8aeb9_132.jpg)
 
 We love open source software!
 See [our other projects][community]
 or [hire us][hire] to help build your product.
 
-  [community]: https://thoughtbot.com/community?utm_source=github
-  [hire]: https://thoughtbot.com/hire-us?utm_source=github
+  [community]: https://gitlab.com/dainmiller
+  [hire]: mailto:miller.dain@gmail.com
   
 ## Production
 
