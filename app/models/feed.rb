@@ -17,7 +17,7 @@ class Feed
 
   private
   def render_existing_feed
-    existing_feed = true
+    self.existing_feed = true
   end
 
   def create_episodes
