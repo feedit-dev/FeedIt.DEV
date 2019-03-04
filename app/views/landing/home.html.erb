@@ -1,19 +1,15 @@
-<h1>Available Commands</h1>
-
-<h2>existing_podcasts_feed</h2>
+<h2><pre>?existing_feed=true | <a href="http://podfeedit-production.herokuapp.com/f?existing_feed=true">example</a></pre></h2>
 <p>This simply ignores all other attributes, and pulls in a random feed from iTunes</p>
 
-<h2>eps=5</h2>
+<hr />
+
+<h2><pre>?eps=INTEGER | <a href="http://podfeedit-production.herokuapp.com/f?eps=10">example</a></pre></h2>
 <p>This allows you to dynamically add episodes to your feed.</p>
 
-<h2>without_guids=true</h2>
-<p>This removes GUIDs from the episode blocks.</p>
+<hr />
 
-<h2>duplicate_guids=true</h2>
-<p>This adds the same GUID across all episode blocks.</p>
-
-<h2>malformed_audio=true</h2>
-<p>This adds malformed_audio URLs to every item block.</p>
+<h2><pre>?empty_guid=true | <a href="http://podfeedit-production.herokuapp.com/f?eps=10&empty_guid=true">example</a></pre></h2>
+<p>This removes GUIDs from the episode blocks. This param requires an eps param as well.</p>
 
 <hr />
 
