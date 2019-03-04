@@ -32,17 +32,13 @@ class Feed
 
   def add_duplicate_guids_to_episodes
     if self.episodes
-      if @options[:duplicate_guid]
-        self.episodes.each { |e| e.duplicate_guid = true }
-      end
+      self.episodes.each { |e| e.duplicate_guid = true }
     end
   end
 
   def add_malformed_audio_to_episodes
     if self.episodes
-      if @options[:malformed_audio]
-        self.episodes.each { |e| e.malformed_audio = true }
-      end
+      self.episodes.each { |e| e.malformed_audio = true }
     end
   end
 
