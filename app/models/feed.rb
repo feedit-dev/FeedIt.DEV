@@ -21,7 +21,7 @@ class Feed
   end
 
   def create_episodes
-    self.episodes = (1..@options[:episodes]).map { Episode.new }
+    self.episodes ||= (1..@options[:episodes]).map { Episode.new }
   end
 
   def add_empty_guids_to_episodes
