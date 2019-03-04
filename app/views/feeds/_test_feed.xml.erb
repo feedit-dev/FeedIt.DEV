@@ -41,8 +41,8 @@
   </image>
 
   <% if @feed.episodes %>
-    <% (1..@feed.episodes).each do |i| %>
-      <%= render 'episode' %>
+    <% @feed.episodes.each do |episode| %>
+      <%= render 'episode', episode: episode %>
     <% end %>
   <% end %>
 

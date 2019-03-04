@@ -1,33 +1,43 @@
 class Feed
   attr_accessor :existing_feed, :episodes, :duplicate_guid, :empty_guid, :malformed_audio
 
-  def initialize ; end
+  def initialize options
+    @options = options
+  end
 
-  def build_state_from_url params
+  def generate!
 
-    if params[:existing_feed]
-      self.existing_feed = true
+    if @options[:existing_feed]
+      existing_feed = true
     end
 
-    if params[:eps]
-      self.episodes = episodes_for(count: params[:eps])
+    if @options[:episodes]
+      create_episodes_for(count: @options[:episodes])
     end
 
-    if params[:duplicate_guid]
-      self.duplicate_guid = true
+    if self.episodes
+
+      if @options[:empty_guid]
+        self.episodes.each { |e| e.empty_guid = true}
+      end
+
+      # if @params[:duplicate_guid]
+      #   duplicate_guid = true
+      # end
+      #
+      # if @params[:malformed_audio]
+      #   if @params[:eps]
+      #     malformed_audio = true
+      #   end
+      # end
     end
 
-    if params[:empty_guid]
-      self.empty_guid = true
-    end
-
-    if params[:malformed_audio]
-      self.malformed_audio = true
-    end
+    self
   end
 
   private
-  def episodes_for(count:)
-    (1..count).map { Episode.new }
+  def create_episodes_for(count:)
+    self.episodes = (1..count).map { Episode.new }
   end
+
 end
