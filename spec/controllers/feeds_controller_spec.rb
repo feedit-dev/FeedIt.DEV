@@ -14,8 +14,7 @@ RSpec.describe FeedsController, type: :controller do
       expect(response).to render_template(:index)
     end
 
-    # This test fails because class assignments are dynamic
-    xit "assigns the Feed with params to the @feed object" do
+    it "assigns the Feed with params to the @feed object correctly" do
       feed_mock = Feed.new({
         existing_feed: nil,
         episodes: 2,
@@ -23,7 +22,7 @@ RSpec.describe FeedsController, type: :controller do
         duplicate_guid: nil
       }).generate!
       get :index, { params: { eps: "2"}, format: :xml }
-      expect(assigns(:feed)).to include(feed_mock)
+      expect(assigns(:feed).episodes.count).to eq(feed_mock.episodes.count)
     end
   end
 end
