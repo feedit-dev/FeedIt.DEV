@@ -6,12 +6,8 @@ class Feed
   end
 
   def generate!
-    render_existing_feed            if @options[:existing_feed]
-    create_episodes                 if @options[:episodes]
-    add_empty_guids_to_episodes     if @options[:empty_guid]
-    add_duplicate_guids_to_episodes if @options[:duplicate_guid]
-    add_malformed_audio_to_episodes if @options[:malformed_audio]
-
+    return render_existing_feed   if @options[:existing_feed]
+    create_episodes               if @options[:episodes]
     self
   end
 
@@ -22,24 +18,22 @@ class Feed
 
   def create_episodes
     self.episodes ||= (1..@options[:episodes]).map { Episode.new }
+
+    add_empty_guids_to_episodes     if self.episodes and @options[:empty_guid]
+    add_duplicate_guids_to_episodes if self.episodes and @options[:duplicate_guid]
+    add_malformed_audio_to_episodes if self.episodes and @options[:malformed_audio]
   end
 
   def add_empty_guids_to_episodes
-    if self.episodes
-      self.episodes.each { |e| e.empty_guid = true }
-    end
+    self.episodes.each { |e| e.empty_guid = true }
   end
 
   def add_duplicate_guids_to_episodes
-    if self.episodes
-      self.episodes.each { |e| e.duplicate_guid = true }
-    end
+    self.episodes.each { |e| e.duplicate_guid = true }
   end
 
   def add_malformed_audio_to_episodes
-    if self.episodes
-      self.episodes.each { |e| e.malformed_audio = true }
-    end
+    self.episodes.each { |e| e.malformed_audio = true }
   end
 
 end
