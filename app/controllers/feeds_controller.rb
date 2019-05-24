@@ -2,15 +2,29 @@ class FeedsController < ApplicationController
   respond_to :xml
 
   def index
-    eps = params[:eps] || NullEps.new.eps
-
     @feed = Feed.new({
-      existing_feed:  params[:existing_feed] || params[:existing_feeds],
-      episodes:       eps.chomp.to_i,
-      empty_guid:     params[:empty_guid] || params[:empty_guids],
-      duplicate_guid: params[:duplicate_guid] || params[:duplicate_guids]
+      existing_feed:  existing_feed,
+      episodes:       episodes,
+      empty_guid:     empty_guid,
+      duplicate_guid: duplicate_guid
     }).generate!
 
     respond_with @feed
+  end
+
+  def existing_feed
+    params[:existing_feed] || params[:existing_feeds]
+  end
+
+  def episodes
+    (params[:eps] || NullEps.new.eps).chomp.to_i
+  end
+
+  def empty_guid
+    params[:empty_guid] || params[:empty_guids]
+  end
+
+  def duplicate_guid
+    params[:duplicate_guid] || params[:duplicate_guids]
   end
 end
