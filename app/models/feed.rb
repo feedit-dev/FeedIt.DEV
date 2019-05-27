@@ -6,7 +6,7 @@ class Feed
   end
 
   def generate!
-    return render_existing_feed   if @options[:existing_feed]
+    render_existing_feed   if @options[:existing_feed]
     create_episodes               if @options[:episodes]
     self
   end
