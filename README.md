@@ -6,7 +6,7 @@ The most versatile podcast feed generator for testing and development.
 
 Generate a podcast feed for your own use via:
 
-- [https://podfeed.it/f](https://podfeed.it/f)
+- [https://app.feedit.dev/f](https://app.feedit.dev/f)
 
 Learn more about the params we allow you to pass to tweak the feed via:
 
