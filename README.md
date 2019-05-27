@@ -1,4 +1,4 @@
-# PodFeed.IT
+# FeedIt.DEV
 
 The most versatile podcast feed generator for testing and development.
 
@@ -10,7 +10,7 @@ Generate a podcast feed for your own use via:
 
 Learn more about the params we allow you to pass to tweak the feed via:
 
-- [https://podfeed.it](https://podfeed.it)
+- [https://app.feedit.dev](https://app.feedit.dev)
 
 ## Contributing
 
