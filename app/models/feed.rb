@@ -7,8 +7,8 @@ class Feed
 
   def generate!
     render_existing_feed   if @options[:existing_feed]
-    create_episodes        if @options[:episodes]
     render_email           if @options[:email]
+    create_episodes        if @options[:episodes]
     self
   end
 
