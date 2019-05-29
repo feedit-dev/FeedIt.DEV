@@ -11,6 +11,15 @@ RSpec.describe Feed, type: :model do
     end
   end
 
+  context "#.generate! with custom email" do
+    feed = Feed.new(
+      email: 'd@dain.io'
+    ).generate!
+    it "sets the custom email model state" do
+      expect(feed.email).to eq('d@dain.io')
+    end
+  end
+
   context "#.generate! with episodes" do
     feed = Feed.new({
       episodes: 2
