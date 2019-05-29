@@ -13,4 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
 //= require_tree .
+
+$(document).ready(function() {
+
+  $('.custom-email').keyup(function(e) {
+    $('.email-example').attr('href', "/f?email=" + $(e.currentTarget).val())
+  })
+
+});

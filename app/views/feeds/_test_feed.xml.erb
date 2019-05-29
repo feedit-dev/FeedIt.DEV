@@ -6,7 +6,7 @@
     <![CDATA[<p>This is a description for your test podcast.</p>]]>
   </description>
 
-  <managingEditor>test@test.com</managingEditor>
+  <managingEditor><%= @feed.email %></managingEditor>
   <copyright>Test LLC</copyright>
   <generator>Test</generator>
 
@@ -15,7 +15,7 @@
 
   <itunes:owner>
     <itunes:name>Test</itunes:name>
-    <itunes:email>test@email.com</itunes:email>
+    <itunes:email><%= @feed.email %></itunes:email>
   </itunes:owner>
 
   <itunes:author>Test Authors</itunes:author>
