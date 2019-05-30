@@ -7,7 +7,8 @@ class FeedsController < ApplicationController
       episodes:       episodes,
       empty_guid:     empty_guid,
       duplicate_guid: duplicate_guid,
-      email:          email
+      email:          email,
+      title:          title
     }).generate!
 
     SavedQuery.save_by(params)
@@ -16,22 +17,26 @@ class FeedsController < ApplicationController
   end
 
   def existing_feed
-    params[:existing_feed] || params[:existing_feeds]
+    params[:existing_feed] or params[:existing_feeds]
   end
 
   def episodes
-    (params[:eps] || NullEps.new.eps).chomp.to_i
+    (params[:eps] or NullEps.new.eps).chomp.to_i
   end
 
   def empty_guid
-    params[:empty_guid] || params[:empty_guids]
+    params[:empty_guid] or params[:empty_guids]
   end
 
   def duplicate_guid
-    params[:duplicate_guid] || params[:duplicate_guids]
+    params[:duplicate_guid] or params[:duplicate_guids]
   end
 
   def email
     params[:email]
+  end
+
+  def title
+    params[:title] or NullTitle.new.title
   end
 end
