@@ -10,12 +10,15 @@ class FeedsController < ApplicationController
       email:          email
     }).generate!
 
+    SavedQuery.save_by(params)
+
     respond_with @feed
   end
 
   def existing_feed
     params[:existing_feed] || params[:existing_feeds]
-  end 
+  end
+
   def episodes
     (params[:eps] || NullEps.new.eps).chomp.to_i
   end

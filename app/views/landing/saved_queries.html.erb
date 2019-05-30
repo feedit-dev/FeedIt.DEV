@@ -1,0 +1,9 @@
+<h1>Saved Queries</h1>
+<hr />
+<ul>
+<% @saved_queries.each do |saved_query| %>
+
+  <li><%= saved_query.search %></li>
+
+<% end %>
+</ul>
