@@ -11,6 +11,24 @@ RSpec.describe Feed, type: :model do
     end
   end
 
+  context "#.generate! with custom title" do
+    feed = Feed.new(
+      title: 'Working'
+    ).generate!
+    it "sets the custom title model state" do
+      expect(feed.title).to eq('Working')
+    end
+  end
+
+  context "#.generate! with custom description" do
+    feed = Feed.new(
+      description: 'Working'
+    ).generate!
+    it "sets the custom description model state" do
+      expect(feed.description).to eq('Working')
+    end
+  end
+
   context "#.generate! with custom email" do
     feed = Feed.new(
       email: 'd@dain.io'

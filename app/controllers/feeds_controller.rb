@@ -42,6 +42,6 @@ class FeedsController < ApplicationController
   end
 
   def description
-    params[:descriptio] or NullDescription.new.description
+    params[:description] or NullDescription.new.description
   end
 end

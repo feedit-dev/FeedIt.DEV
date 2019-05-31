@@ -37,9 +37,13 @@ RSpec.describe 'feeds/index.xml.erb', type: :view do
 
   context "custom feed attributes" do
     let(:custom_email) { 'd@dain.io' }
+    let(:custom_title) { 'Title' }
+    let(:custom_description) { 'Description' }
     let(:feed) {
       Feed.new(
-        email: custom_email
+        email: custom_email,
+        title: custom_title,
+        description: custom_description
       ).generate!
     }
 
@@ -47,6 +51,18 @@ RSpec.describe 'feeds/index.xml.erb', type: :view do
       assign(:feed, feed)
       render
       expect(response.body).to include(custom_email)
+    end
+
+    it "renders a custom title" do
+      assign(:feed, feed)
+      render
+      expect(response.body).to include(custom_title)
+    end
+
+    it "renders a custom description" do
+      assign(:feed, feed)
+      render
+      expect(response.body).to include(custom_description)
     end
   end
 
