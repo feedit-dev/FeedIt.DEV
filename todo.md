@@ -4,14 +4,14 @@
 
 # Feed to Customize
 
-- [ ] Title
+- [x] Title
 - [ ] Copyright
 - [ ] Generator
 - [ ] iTunes owner name
 - [ ] Lannguage
 - [ ] Type
-- Description
-- iTunes Summary 
+- [x] Description
+- [x] iTunes Summary 
 - Image
 - Link
 

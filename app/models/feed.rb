@@ -1,5 +1,7 @@
 class Feed
-  attr_accessor :existing_feed, :episodes, :duplicate_guid, :empty_guid, :malformed_audio, :email, :title
+  attr_accessor :existing_feed,  :episodes, :duplicate_guid,
+                :empty_guid, :malformed_audio, :email,
+                :title, :description
 
   def initialize options
     @options = options
@@ -9,6 +11,7 @@ class Feed
     render_existing_feed   if @options[:existing_feed]
     render_email           if @options[:email]
     render_title           if @options[:title]
+    render_description     if @options[:description]
     create_episodes        if @options[:episodes]
     self
   end
@@ -44,5 +47,9 @@ class Feed
   
   def render_title
     self.title = @options[:title]
+  end
+
+  def render_description
+    self.description = @options[:description]
   end
 end

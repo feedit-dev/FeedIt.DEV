@@ -8,7 +8,8 @@ class FeedsController < ApplicationController
       empty_guid:     empty_guid,
       duplicate_guid: duplicate_guid,
       email:          email,
-      title:          title
+      title:          title,
+      description:    description
     }).generate!
 
     SavedQuery.save_by(params)
@@ -33,10 +34,14 @@ class FeedsController < ApplicationController
   end
 
   def email
-    params[:email]
+    params[:email] or NullEmail.new.email
   end
 
   def title
     params[:title] or NullTitle.new.title
+  end
+
+  def description
+    params[:descriptio] or NullDescription.new.description
   end
 end

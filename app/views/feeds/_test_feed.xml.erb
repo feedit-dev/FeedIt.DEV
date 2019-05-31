@@ -3,7 +3,7 @@
   <title><%= @feed.title %></title>
 
   <description>
-    <![CDATA[<p>This is a description for your test podcast.</p>]]>
+    <![CDATA[<p><%= @feed.description %></p>]]>
   </description>
 
   <managingEditor><%= @feed.email %></managingEditor>
@@ -14,14 +14,14 @@
   <link>http://google.com</link>
 
   <itunes:owner>
-    <itunes:name>Test</itunes:name>
+    <itunes:name><%= @feed.title %></itunes:name>
     <itunes:email><%= @feed.email %></itunes:email>
   </itunes:owner>
 
   <itunes:author>Test Authors</itunes:author>
 
   <itunes:summary>
-    <![CDATA[<p>This is a description for your test podcast.</p>]]>
+    <![CDATA[<p><%= @feed.description %></p>]]>
   </itunes:summary>
   <language>en</language>
 

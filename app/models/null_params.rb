@@ -1,4 +1,3 @@
 class NullParams
-  def initialize
-  end
+  def initialize ; end
 end
