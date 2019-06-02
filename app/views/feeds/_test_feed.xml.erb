@@ -7,25 +7,25 @@
   </description>
 
   <managingEditor><%= @feed.email %></managingEditor>
-  <copyright>Test LLC</copyright>
-  <generator>Test</generator>
+  <copyright><%= @feed.author %></copyright>
+  <generator>FeedIt.DEV</generator>
 
   <atom:link href="<%= request.original_url %>" rel="self" type="application/rss+xml"/>
-  <link>http://google.com</link>
+  <link><%= request.original_url %></link>
 
   <itunes:owner>
     <itunes:name><%= @feed.title %></itunes:name>
     <itunes:email><%= @feed.email %></itunes:email>
   </itunes:owner>
 
-  <itunes:author>Test Authors</itunes:author>
+  <itunes:author><%= @feed.author %></itunes:author>
 
   <itunes:summary>
     <![CDATA[<p><%= @feed.description %></p>]]>
   </itunes:summary>
   <language>en</language>
 
-  <itunes:explicit>yes</itunes:explicit>
+  <itunes:explicit><%= @feed.explicit %></itunes:explicit>
   <itunes:category text="Comedy"/>
   <itunes:category text="Health"/>
   <itunes:category text="News &amp; Politics"/>

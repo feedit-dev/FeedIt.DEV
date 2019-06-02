@@ -9,7 +9,9 @@ class FeedsController < ApplicationController
       duplicate_guid: duplicate_guid,
       email:          email,
       title:          title,
-      description:    description
+      description:    description,
+      author:         author,
+      explicit:       explicit
     }).generate!
 
     SavedQuery.save_by(params)
@@ -44,4 +46,12 @@ class FeedsController < ApplicationController
   def description
     params[:description] or NullDescription.new.description
   end
-end
+
+  def author
+    params[:author] or NullAuthor.new.author
+  end
+
+  def explicit
+    iiiparams[:explicit] or NullBoolean.new.explicit
+  end
+eniiid
