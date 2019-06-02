@@ -26,17 +26,15 @@
   <language>en</language>
 
   <itunes:explicit><%= @feed.explicit %></itunes:explicit>
-  <itunes:category text="Comedy"/>
-  <itunes:category text="Health"/>
-  <itunes:category text="News &amp; Politics"/>
-  <itunes:keywords>womens,TV,society,sexuality,rights,pop,Politics,News,lgbt,gender,gay,film,feminist,feminism,female,Education,culture,Comedy,alternative,alt</itunes:keywords>
-  <itunes:type>episodic</itunes:type>
+  <itunes:category text="<%= @feed.category %>"/>
+  <itunes:keywords><%= @feed.category.try(:downcase) %></itunes:keywords>
+  <itunes:type><%= @feed.type %></itunes:type>
   <itunes:image href="https://content.production.cdn.art19.com/images/1d/47/38/a0/1d4738a0-9d4a-49f1-878b-948786f3dd21/f104d70c13e074b9922a522d9be96a0ab6ad194a8ad49fe466aaa2699e4c72d87e41109a4d4978fe02c2d8b8750a8358a667c09a8b1915c28bbddbf18a639cbf.jpeg"/>
 
   <image>
     <url>https://content.production.cdn.art19.com/images/1d/47/38/a0/1d4738a0-9d4a-49f1-878b-948786f3dd21/f104d70c13e074b9922a522d9be96a0ab6ad194a8ad49fe466aaa2699e4c72d87e41109a4d4978fe02c2d8b8750a8358a667c09a8b1915c28bbddbf18a639cbf.jpeg</url>
-    <link>http://www.earwolf.com/show/throwing-shade/</link>
-    <title>Throwing Shade</title>
+    <link><%= request.original_url %></link>
+    <title><%= @feed.title %></title>
   </image>
 
   <% if @feed.episodes %>

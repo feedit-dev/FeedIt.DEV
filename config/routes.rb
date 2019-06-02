@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # Core route used to enter commands
   resources :feeds, defaults: { format: 'xml' }
+  resources :json, defaults: { format: 'json' }
 
   # Quick access route for XML easier URL entry by customers
   get '/f', controller: 'feeds', action: 'index', defaults: { format: 'xml' }
