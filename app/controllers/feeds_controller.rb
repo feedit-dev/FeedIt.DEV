@@ -52,6 +52,6 @@ class FeedsController < ApplicationController
   end
 
   def explicit
-    iiiparams[:explicit] or NullBoolean.new.explicit
+    params[:explicit] or NullBoolean.new.explicit
   end
-eniiid
+end
