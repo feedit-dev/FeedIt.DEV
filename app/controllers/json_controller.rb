@@ -11,17 +11,17 @@ class JsonController < GeneratorController
       {
         id: 1,
         name: 'Joe Rogan',
-        imageUrl: 'https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/fd78be85-b845-4672-a316-7df0abe80812_medium'
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/The_Joe_Rogan_Experience_logo.jpg/220px-The_Joe_Rogan_Experience_logo.jpg'
       },
       {
         id: 2,
         name: 'Start Here: Web Dev',
-        imageUrl: 'https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/fd78be85-b845-4672-a316-7df0abe80812_medium'
+        imageUrl: 'http://i1.sndcdn.com/avatars-000227802710-27eerh-original.jpg'
       },
       {
         id: 3,
         name: "Start Here: Ruby on Rails",
-        imageUrl: 'https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/fd78be85-b845-4672-a316-7df0abe80812_medium'
+        imageUrl: 'http://i1.sndcdn.com/avatars-000227601719-zmd5i2-original.jpg'
       }
     ]
     render json: @shows
