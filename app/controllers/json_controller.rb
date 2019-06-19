@@ -15,8 +15,8 @@ class JsonController < GeneratorController
       },
       {
         id: 2,
-        name: 'Start Here: Web Dev',
-        imageUrl: 'http://i1.sndcdn.com/avatars-000227802710-27eerh-original.jpg'
+        name: 'Accidental Tech Podcast',
+        imageUrl: 'https://pbs.twimg.com/profile_images/418453319385120769/yrjxadhc.jpeg'
       },
       {
         id: 3,
