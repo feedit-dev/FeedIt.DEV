@@ -3,8 +3,8 @@ class FeedsController < GeneratorController
 
   def index
     super
-
     respond_with @feed
   end
 
 end
+
