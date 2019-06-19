@@ -7,8 +7,14 @@ class JsonController < GeneratorController
   end
 
   def shows
-    shows = [{name: 'Joe Rogan', imageUrl: 'URL HERE'}]
-    render json: shows
+    @shows = [
+      {
+        id: 1,
+        name: 'Joe Rogan',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/The_Joe_Rogan_Experience_logo.jpg/220px-The_Joe_Rogan_Experience_logo.jpg'
+      }
+    ]
+    render json: @shows
   end
 
 end
