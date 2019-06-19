@@ -22,6 +22,26 @@ class JsonController < GeneratorController
         id: 3,
         name: "Start Here: Ruby on Rails",
         imageUrl: 'http://i1.sndcdn.com/avatars-000227601719-zmd5i2-original.jpg'
+      },
+      {
+        id: 4,
+        name: "Ungeniused",
+        imageUrl: "https://relayfm.s3.amazonaws.com/uploads/broadcast/image_2x/28/ungeniused_artwork.png"
+      },
+      {
+        id: 5,
+        name: 'Mac Power Users',
+        imageUrl: 'https://relayfm.s3.amazonaws.com/uploads/broadcast/image_2x/16/mpu_artwork.png'
+      },
+      {
+        id: 6,
+        name: 'Material',
+        imageUrl: 'https://relayfm.s3.amazonaws.com/uploads/broadcast/image_2x/19/material_artwork.png'
+      },
+      {
+        id: 7,
+        name: 'Download',
+        imageUrl: 'https://relayfm.s3.amazonaws.com/uploads/broadcast/image_2x/38/download_artwork.png'
       }
     ]
     render json: @shows
