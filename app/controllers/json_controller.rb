@@ -21,7 +21,6 @@ class JsonController < GeneratorController
         audio_url: 'here 2'
       }
     ]
-    binding.pry
     render json: show
   end
 
