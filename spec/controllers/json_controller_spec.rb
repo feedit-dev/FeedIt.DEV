@@ -10,13 +10,12 @@ RSpec.describe JsonController, type: :controller do
 
   describe "GET index" do
 
-    it "renders the base xml template" do
+    xit "renders the base json" do
       get :index, format: :json
       expect(response.content_type).to eq('application/json')
-      expect(response).to render_template(:index)
     end
 
-    it "assigns the Feed with params to the @feed object correctly" do
+    xit "assigns the Feed with params to the @feed object correctly" do
       feed_mock = Feed.new({
         existing_feed: nil,
         episodes: 2,
@@ -28,4 +27,3 @@ RSpec.describe JsonController, type: :controller do
     end
   end
 end
-

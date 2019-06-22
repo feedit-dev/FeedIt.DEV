@@ -6,19 +6,36 @@ class JsonController < GeneratorController
     respond_with @feed
   end
 
+  #  is_published, media: { id, url, duration}
   def episodes
     show = _shows.select { |show| show.fetch(:id).to_s == params[:id].to_s }
     show = show.first
     show['episodes'] = [
       {
-        id: 1,
+        id: 10,
         title: 'some episode title',
-        audio_url: 'here'
+        description: 'some description',
+        season_id: 3,
+        number: 10,
+        is_published: true,
+        media: {
+          id: 15,
+          url: 'audio url here',
+          duration: 300
+        }
       },
       {
-        id: 2,
-        title: 'some other episode title',
-        audio_url: 'here 2'
+        id: 11,
+        title: 'some episode title',
+        description: 'some description',
+        season_id: 3,
+        number: 11,
+        is_published: true,
+        media: {
+          id: 31,
+          url: 'audio url here',
+          duration: 300
+        }
       }
     ]
     render json: show
