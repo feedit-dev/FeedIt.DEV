@@ -18,11 +18,11 @@ class JsonController < GeneratorController
         season_id: 3,
         number: 10,
         is_published: true,
-        media: {
+        media: [{
           id: 15,
-          url: 'audio url here',
+          url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
           duration: 300
-        }
+        }]
       },
       {
         id: 11,
@@ -31,11 +31,11 @@ class JsonController < GeneratorController
         season_id: 3,
         number: 11,
         is_published: true,
-        media: {
+        media: [{
           id: 31,
-          url: 'audio url here',
+          url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
           duration: 300
-        }
+        }]
       }
     ]
     render json: show
