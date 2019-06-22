@@ -6,12 +6,9 @@ class JsonController < GeneratorController
     respond_with @feed
   end
 
-  def episode
-  end
-
   # List of temporary podcasts (will be updated to use data from DB)
   def shows
-   [
+   @shows = [
       {
         id: 1,
         title: 'Joe Rogan',
