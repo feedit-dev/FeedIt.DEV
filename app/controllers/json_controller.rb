@@ -12,27 +12,27 @@ class JsonController < GeneratorController
     show = show.first
     show['episodes'] = [
       {
-        id: 10,
+        id: "#{show[:id]}1",
         title: 'some episode title',
         description: 'some description',
         season_id: 3,
         number: 10,
         is_published: true,
         media: [{
-          id: 15,
+          id: "#{show[:id]}111",
           url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
           duration: 300
         }]
       },
       {
-        id: 11,
+        id: "#{show[:id]}2",
         title: 'some episode title',
         description: 'some description',
         season_id: 3,
         number: 11,
         is_published: true,
         media: [{
-          id: 31,
+          id: "#{show[:id]}2222",
           url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
           duration: 300
         }]
