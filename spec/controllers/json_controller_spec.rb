@@ -2,6 +2,12 @@ require 'spec_helper'
 
 RSpec.describe JsonController, type: :controller do
 
+  describe "GET episodes" do
+    it "gets episodes for a show" do
+      get :episodes, { params: { id: 2 }, format: :json }
+    end
+  end
+
   describe "GET index" do
 
     it "renders the base xml template" do

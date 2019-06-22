@@ -6,9 +6,32 @@ class JsonController < GeneratorController
     respond_with @feed
   end
 
+  def episodes
+    show = _shows.select { |show| show.fetch(:id).to_s == params[:id].to_s }
+    show = show.first
+    show['episodes'] = [
+      {
+        id: 1,
+        title: 'some episode title',
+        audio_url: 'here'
+      },
+      {
+        id: 2,
+        title: 'some other episode title',
+        audio_url: 'here 2'
+      }
+    ]
+    binding.pry
+    render json: show
+  end
+
   # List of temporary podcasts (will be updated to use data from DB)
   def shows
-   @shows = [
+    render json: _shows
+  end
+
+  def _shows
+    [
       {
         id: 1,
         title: 'Joe Rogan',
@@ -50,7 +73,6 @@ class JsonController < GeneratorController
         imageUrl: ''
       }
     ]
-    render json: @shows
   end
 
 end

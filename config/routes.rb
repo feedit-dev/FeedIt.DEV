@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   # Quick access routes for JSON easier URL entry by customers
   get '/j', controller: 'json', action: 'index', defaults: { format: 'json' }
   get '/shows', controller: 'json', action: 'shows', defaults: { format: 'json' }
+  get '/shows/:id/episodes', controller: 'json', action: 'episodes', defaults: { format: 'json' }
 end
