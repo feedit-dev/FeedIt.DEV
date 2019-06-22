@@ -7,14 +7,6 @@ class JsonController < GeneratorController
   end
 
   def episode
-    show = shows.select { |show| show.id == params[:id] }
-    show['episodes'] = [
-      {
-      },
-      {
-      }
-    ]
-    render json: show
   end
 
   # List of temporary podcasts (will be updated to use data from DB)
