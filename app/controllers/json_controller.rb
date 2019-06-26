@@ -1,4 +1,5 @@
 class JsonController < GeneratorController
+
   respond_to :json
 
   def index
@@ -6,39 +7,41 @@ class JsonController < GeneratorController
     respond_with @feed
   end
 
-  #  is_published, media: { id, url, duration}
   def episodes
-    show = _shows.select { |show| show.fetch(:id).to_s == params[:id].to_s }
-    show = show.first
-    show['episodes'] = [
-      {
-        id: "#{show[:id]}1",
-        title: 'some episode title',
-        description: 'some description',
-        season_id: 3,
-        number: 10,
-        is_published: true,
-        media: [{
-          id: "#{show[:id]}111",
-          url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
-          duration: 300
-        }]
-      },
-      {
-        id: "#{show[:id]}2",
-        title: 'some episode title',
-        description: 'some description',
-        season_id: 3,
-        number: 11,
-        is_published: true,
-        media: [{
-          id: "#{show[:id]}2222",
-          url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
-          duration: 300
-        }]
-      }
-    ]
-    render json: show
+    show = _shows.select { |show| show.fetch(:id).to_s == params[:id].to_s }.first
+    unless show.nil?
+      show['episodes'] = [
+        {
+          id: "#{show.try(:id)}1",
+          title: "Title",
+          description: 'some description',
+          season_id: 3,
+          number: 10,
+          is_published: true,
+          media: [{
+            id: "#{show.try(:id)}111",
+            url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
+            duration: 300
+          }]
+        },
+        {
+          id: "#{show.try(:id)}2",
+          title: "Title 2",
+          description: 'some description',
+          season_id: 3,
+          number: 11,
+          is_published: true,
+          media: [{
+            id: "#{show.try(:id)}2222",
+            url: 'http://feeds.soundcloud.com/stream/598981890-starthere-webdev-entry-level-jobs.mp3',
+            duration: 300
+          }]
+        }
+      ]
+      render json: show
+    else
+      render json: nil, status: 404
+    end
   end
 
   # List of temporary podcasts (will be updated to use data from DB)
