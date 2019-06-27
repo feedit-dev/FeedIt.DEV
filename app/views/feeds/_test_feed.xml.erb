@@ -6,7 +6,14 @@
     <![CDATA[<p><%= @feed.description %></p>]]>
   </description>
 
-  <managingEditor><%= @feed.email %></managingEditor>
+  <% if @feed.no_email %>
+  <% else %>
+    <% if @feed.random_email %>
+      <managingEditor><%= @feed.random_email %></managingEditor>
+    <% else %>
+      <managingEditor><%= @feed.email %></managingEditor>
+    <% end %>
+  <% end %>
   <copyright><%= @feed.author %></copyright>
   <generator>FeedIt.DEV</generator>
 
@@ -15,7 +22,14 @@
 
   <itunes:owner>
     <itunes:name><%= @feed.title %></itunes:name>
-    <itunes:email><%= @feed.email %></itunes:email>
+    <% if @feed.no_email %>
+    <% else %>
+      <% if @feed.random_email %>
+        <itunes:email><%= @feed.random_email %></itunes:email>
+      <% else %>
+        <itunes:email><%= @feed.email %></itunes:email>
+      <% end %>
+    <% end %>
   </itunes:owner>
 
   <itunes:author><%= @feed.author %></itunes:author>

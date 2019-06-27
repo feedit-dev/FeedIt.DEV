@@ -12,7 +12,9 @@ class GeneratorController < ApplicationController
       author:         author,
       explicit:       explicit,
       category:       category,
-      type:           type
+      type:           type,
+      random_email:   random_email,
+      no_email:       no_email
     }).generate!
 
     SavedQuery.save_by(params)
@@ -60,5 +62,13 @@ class GeneratorController < ApplicationController
 
   def type
     params[:type] or NullType.new.type
+  end
+
+  def random_email
+    params[:random_email]
+  end
+
+  def no_email
+    params[:no_email]
   end
 end

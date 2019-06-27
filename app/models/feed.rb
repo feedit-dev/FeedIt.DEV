@@ -1,7 +1,8 @@
 class Feed
   attr_accessor :existing_feed,  :episodes, :duplicate_guid,
                 :empty_guid, :malformed_audio, :email, :type,
-                :title, :description, :author, :explicit, :category
+                :title, :description, :author, :explicit, :category,
+                :random_email, :no_email
 
   def initialize options
     @options = options
@@ -16,6 +17,8 @@ class Feed
     render_explicit        if @options[:explicit]
     render_category        if @options[:category]
     render_type            if @options[:type]
+    render_random_email    if @options[:random_email]
+    render_no_email        if @options[:no_email]
     create_episodes        if @options[:episodes]
     self
   end
@@ -71,5 +74,13 @@ class Feed
 
   def render_type
     self.type = @options[:type]
+  end
+
+  def render_random_email
+    self.random_email = "#{SecureRandom.hex}@gmail.com"
+  end
+
+  def render_no_email
+    self.no_email = @options[:no_email]
   end
 end
