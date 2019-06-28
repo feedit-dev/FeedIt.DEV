@@ -1,28 +1,52 @@
-<h1>XML/RSS Options [/f]</h1>
+<h4>XML/RSS Options [/f]</h4>
 
 <hr />
 
-<h3><pre>existing_feed=true | <a href="http://app.feedit.dev/f?existing_feed=true">example</a></pre></h3>
+<h4> Channel Options</h4>
+<p>
+<strong>
+<h5><pre>existing_feed=true | <a href="http://app.feedit.dev/f?existing_feed=true">example</a></pre></h5>
+</strong>
 <p>This ignores all other attributes, and pulls in a random feed from iTunes</p>
+</p>
 
-<h3><pre>email=<input class="custom-email" /> | <a class="email-example" href="http://app.feedit.dev/f?existing_feed=true">example</a></pre></h3>
+<p>
+<strong>
+<h5><pre>email=<input class="custom-email" /> | <a class="email-example" href="http://app.feedit.dev/f?existing_feed=true">example</a></pre></h5>
+</strong>
 <p>This renders the feed with the email you enter above. Enter your email, then click the example link.</p>
+</p>
 
-<h3><pre>random_email=true</pre></h3>
+<p>
+<strong>
+<h5><pre>random_email=true | <a href="http://app.feedit.dev/f?random_email=true&eps=10">example</a></pre></h5>
+</strong>
 <p>This generates and sets a random email address, and should be used in place of the `email=` param.</p>
+</p>
 
-<h3><pre>no_email=true</pre></h3>
+<p>
+<strong>
+<h5><pre>no_email=true | <a href="http://app.feedit.dev/f?no_email=true&eps=10">example</a></pre></h5>
+</strong>
 <p>This ignores all previous email attributes, and removes the email node from the feed, entirely.
+</p>
 
 
 <div style="border: 1px #000 solid; margin-bottom: 20px;" /></div>
 
-<h1>Episode Options</h1>
-<hr />
+<h4>Episode Options</h4>
 
-<h3><pre>eps=INTEGER | <a href="http://app.feedit.dev/f?eps=10">example</a></pre></h2>
+<p>
+<strong>
+<h5><pre>eps=INTEGER | <a href="http://app.feedit.dev/f?eps=10">example</a></pre></h2>
+</strong>
+</p>
 <p>This allows you to dynamically add episodes to your feed.</p>
 
-<h3><pre>empty_guid=true | <a href="http://app.feedit.dev/f?eps=10&empty_guid=true">example</a></pre></h2>
+<p>
+<strong>
+<h5><pre>empty_guid=true | <a href="http://app.feedit.dev/f?eps=10&empty_guid=true">example</a></pre></h5>
+</strong>
 <p>This removes GUIDs from the episode blocks. This param requires an eps param as well.</p>
+</p>
 
