@@ -1,4 +1,5 @@
 class LandingController < ApplicationController
+  layout 'application', except: 'guest'
 
   def how_this_works
   end
@@ -7,6 +8,10 @@ class LandingController < ApplicationController
   end
 
   def json
+  end
+
+  def guest
+    render layout: false
   end
 
   def saved_queries

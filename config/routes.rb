@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Homepage has commands you can use in app
-  root to: "landing#xml", defaults: { format: 'html' }
+  root to: 'landing#guest'
+  get '/app', to: "landing#xml", defaults: { format: 'html' }
   get '/how_this_works', to: 'landing#how_this_works', defaults: { format: 'html' }
   get '/xml', to: 'landing#xml', defaults: { format: 'html'}
   get '/json', to: 'landing#json', defaults: { format: 'html' }
