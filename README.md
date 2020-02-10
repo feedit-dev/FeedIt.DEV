@@ -22,7 +22,7 @@ Thank you, [contributors]!
 
 ## License
 
-PodFeed.IT is Copyright (c) 2019 carlton dain miller.
+PodFeed.IT is Copyright (c) 2020 Start Here, LLC.
 It is free software, and may be redistributed
 under the terms specified in the [LICENSE] file.
 
@@ -30,16 +30,9 @@ under the terms specified in the [LICENSE] file.
 
 ## About
 
-PodFeed.IT is maintained by [Dain Miller](http://dain.io).
+PodFeed.IT is maintained by [Dain Miller](http://dainmiller.tumblr.com).
 
 ![starthere](https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2019-02-27/563189498370_28783431d83611e8aeb9_132.jpg)
-
-We love open source software!
-See [our other projects][community]
-or [hire us][hire] to help build your product.
-
-  [community]: https://gitlab.com/dainmiller
-  [hire]: mailto:miller.dain@gmail.com
   
 ## Production
 
