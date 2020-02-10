@@ -23,8 +23,6 @@ Thank you, [contributors]!
 ## License
 
 PodFeed.IT is Copyright (c) 2020 Start Here, LLC.
-It is free software, and may be redistributed
-under the terms specified in the [LICENSE] file.
 
   [LICENSE]: /LICENSE
 
