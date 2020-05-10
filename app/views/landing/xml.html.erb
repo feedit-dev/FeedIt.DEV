@@ -1,51 +1,58 @@
-<h4>XML/RSS Options [/f]</h4>
+<style>
+a { 
+  float: right;
+}
+</style>
+<h4>XML/RSS Options [Base Route: `/f`]</h4>
 
-<hr />
-
-<h4> Channel Options</h4>
 <p>
 <strong>
-<h5><pre>existing_feed=true | <a href="http://app.feedit.dev/f?existing_feed=true">example</a></pre></h5>
+<h5><code>existing_feed=true <a class="btn btn-primary" href="/f?existing_feed=true">generate</a></code></h5>
 </strong>
 <p>This ignores all other attributes, and pulls in a random feed from iTunes</p>
 </p>
 
+<hr />
+
 <p>
 <strong>
-<h5><pre>email=<input class="custom-email" /> | <a class="email-example" href="http://app.feedit.dev/f?existing_feed=true">example</a></pre></h5>
+<h5><code>email=<input class="custom-email" /> <a class="btn btn-primary email-example" href="/f?existing_feed=true">generate</a></code></h5>
 </strong>
 <p>This renders the feed with the email you enter above. Enter your email, then click the example link.</p>
 </p>
 
+<hr />
+
 <p>
 <strong>
-<h5><pre>random_email=true | <a href="http://app.feedit.dev/f?random_email=true&eps=10">example</a></pre></h5>
+<h5><code>random_email=true <a class="btn btn-primary" href="/f?random_email=true&eps=10">generate</a></code></h5>
 </strong>
 <p>This generates and sets a random email address, and should be used in place of the `email=` param.</p>
 </p>
 
+<hr />
+
 <p>
 <strong>
-<h5><pre>no_email=true | <a href="http://app.feedit.dev/f?no_email=true&eps=10">example</a></pre></h5>
+<h5><code>no_email=true <a href="/f?no_email=true&eps=10" class="btn btn-primary">generate</a></code></h5>
 </strong>
 <p>This ignores all previous email attributes, and removes the email node from the feed, entirely.
 </p>
 
-
-<div style="border: 1px #000 solid; margin-bottom: 20px;" /></div>
-
-<h4>Episode Options</h4>
+<hr />
 
 <p>
 <strong>
-<h5><pre>eps=INTEGER | <a href="http://app.feedit.dev/f?eps=10">example</a></pre></h2>
+<h5><code>eps=INTEGER <a href="/f?eps=10" class="btn btn-primary">generate</a></code></h2>
 </strong>
 </p>
 <p>This allows you to dynamically add episodes to your feed.</p>
 
+<hr />
+
 <p>
 <strong>
-<h5><pre>empty_guid=true | <a href="http://app.feedit.dev/f?eps=10&empty_guid=true">example</a></pre></h5>
+<h5><code>empty_guid=true <a href="/f?eps=10&empty_guid=true" class="btn btn-primary">generate</a></code></h5>
 </strong>
 <p>This removes GUIDs from the episode blocks. This param requires an eps param as well.</p>
 </p>

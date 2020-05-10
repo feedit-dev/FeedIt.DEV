@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_010412) do
+ActiveRecord::Schema.define(version: 2020_05_10_200631) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_010412) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "search"
+    t.string "url"
   end
 
 end

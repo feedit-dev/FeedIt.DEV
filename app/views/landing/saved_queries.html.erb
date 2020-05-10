@@ -3,7 +3,15 @@
 <ul>
 <% @saved_queries.each do |saved_query| %>
 
-  <li><%= saved_query.search %></li>
+  <li>
+    <% if saved_query.url %>
+      <a href="<%= saved_query.url %>">
+        <%= saved_query.search %>
+      </a>
+    <% else %>
+      <%= saved_query.search %>
+    <% end  %>
+  </li>
 
 <% end %>
 </ul>

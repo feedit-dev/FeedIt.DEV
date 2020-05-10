@@ -17,7 +17,7 @@ class GeneratorController < ApplicationController
       no_email:       no_email
     }).generate!
 
-    SavedQuery.save_by(params)
+    SavedQuery.save_with(params: params, request: request)
   end
 
   def existing_feed
